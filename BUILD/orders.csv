@@ -1,0 +1,3 @@
+OrderID,Customer,Status,AssignedTo,Items
+ORD-001,TechCorp Ltd,CREATED,,P001:Wireless Mouse:50|P002:Keyboard:30
+ORD-002,Office Supplies Co,ASSIGNED,E001,P003:USB-C Cable:100|P006:Laptop Bag:20

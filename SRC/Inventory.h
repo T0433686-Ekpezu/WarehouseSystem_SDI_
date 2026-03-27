@@ -1,8 +1,37 @@
-//
-// Created by ekpez on 26/03/2026.
-//
+#ifndef INVENTORY_H
+#define INVENTORY_H
 
-#ifndef WAREHOUSESYSTEM_SDI__INVENTORY_H
-#define WAREHOUSESYSTEM_SDI__INVENTORY_H
+#include <vector>
+#include <string>
+#include "Product.h"
+#include "OrderItem.h"
+using namespace std;
 
-#endif //WAREHOUSESYSTEM_SDI__INVENTORY_H
+class Inventory {
+private:
+    vector<Product> products; //Composition(Inventory owns Products)
+
+public:
+    //Product management
+    void addProduct(Product p);
+    Product* findProductByID(string id);
+    Product* findProductByName(string name);
+    void editProduct(string id);
+    vector<Product>& getAllProducts();
+
+    //Stock operations
+    bool checkStock(const vector<OrderItem>& items);
+    void deductStock(string productID, int qty);
+
+    //Sorting
+    void sortByID();
+    void sortByName();
+    void sortByQuantity();
+
+    //Display
+    void displayAll() const;
+    int getProductCount() const;
+    bool productExists(string id) const;
+};
+
+#endif
