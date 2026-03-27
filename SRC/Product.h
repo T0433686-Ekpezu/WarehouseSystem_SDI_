@@ -5,8 +5,6 @@
 using namespace std;
 
 
-//Product class(represents a single item in the warehouse)
-//It demonstrates encapsulation(private data,public getters/setters)
 class Product {
     private:
     string productID;

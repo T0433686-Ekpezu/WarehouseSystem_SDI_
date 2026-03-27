@@ -1,8 +1,24 @@
-//
-// Created by ekpez on 26/03/2026.
-//
+#ifndef ORDERITEM_H
+#define ORDERITEM_H
 
-#ifndef WAREHOUSESYSTEM_SDI__ORDERITEM_H
-#define WAREHOUSESYSTEM_SDI__ORDERITEM_H
+#include <string>
+using namespace std;
 
-#endif //WAREHOUSESYSTEM_SDI__ORDERITEM_H
+class OrderItem {
+private:
+    string productID;
+    string productName;
+    int quantity;
+
+public:
+    OrderItem(string prodID, string prodName, int qty);
+
+    string getProductID() const;
+    string getProductName() const;
+    int getQuantity() const;
+    void setQuantity(int qty);
+
+    void display() const;
+};
+
+#endif

@@ -1,8 +1,31 @@
-//
-// Created by ekpez on 26/03/2026.
-//
+#ifndef USER_H
+#define USER_H
 
-#ifndef WAREHOUSESYSTEM_SDI__USER_H
-#define WAREHOUSESYSTEM_SDI__USER_H
+#include <string>
+using namespace std;
 
-#endif //WAREHOUSESYSTEM_SDI__USER_H
+class User {
+protected:
+    string userID;
+    string name;
+    string password;
+
+public:
+    User(string id, string name, string pw);
+    virtual ~User();//Virtual destructor for proper cleanup of derived classes
+
+    //Getters
+    string getUserID() const;
+    string getName() const;
+
+    //Setters
+    void setName(string name);
+
+    //Password access
+    bool verifyPassword(string pw) const;
+    string getPassword() const; //Needed for file persistence
+
+    virtual void showMenu() = 0;
+};
+
+#endif
